@@ -1,0 +1,109 @@
+\documentclass[12pt, a4paper]{ctexart}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{harpoon}
+\usepackage{ctex}
+\usepackage{amsmath}
+\pagestyle{plain}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+
+\title{时间序列分析 作业2}
+\author{10161511309\,粟嘉逸}
+\date{日期 2019/11/26}
+
+
+\begin{document}
+\maketitle{}
+
+\paragraph{题目1}
+设$[X,Y]^T$为二维正态向量，求
+        \begin{enumerate}
+        \item 用$Y$对$X^2$的最小方差估计
+        \item 用$Y$对$X^2$的线性无偏最小方差估计
+        \end{enumerate}	
+\paragraph{解答1}
+
+设$Z=[X,Y]^T$满足正态分布$N(\mu_X,\mu_Y;\sigma_X^2,\sigma_Y^2;\rho)$
+
+1. 用$Y$对$X^2$的最小方差估计
+我们已习得，用$Y$对$X^2$的最小方差估计为：$E[X^2|Y]$
+
+我们设$Z$的密度函数为$f(x,y)$，则当$Y=y$时，$X$的条件密度函数为:
+
+\[
+    f_{X|Y}(x|y)=\dfrac{f(x,y)}{\int_{-\infty}^{+\infty}f(x,y)dx}
+    =\dfrac{1}{\sqrt{2\pi(1-\rho^2)}\sigma_X}exp(-\dfrac{(y-\mu)^2}{2(1-\rho^2)\sigma_X^2})
+\]
+
+其中:$\mu_y=\mu_X+(\rho\sigma_X/\sigma_Y)(y-\mu_Y)$
+
+说明已知$Y=y$时,$X$的分布为$N(\mu_y,(1-\rho^2)\sigma_X^2)$
+
+又
+
+\[
+    E[X^2|Y=y] = Var[X|Y=y] + (E[X|Y=y])^2
+\]
+
+所以
+
+$$
+    E[X^2|Y=y] = (1-\rho^2)\sigma_X^2 + \mu_y^2 \\
+               = (1-\rho^2)\sigma_X^2 + [\mu_X+(\rho\sigma_X/\sigma_Y)(y-\mu_Y)]^2
+$$
+
+从而有
+
+\[
+    E[X^2|Y] = (1-\rho^2)\sigma_X^2 + [\mu_X+(\rho\sigma_X/\sigma_Y)(Y-\mu_Y)]^2
+\]
+
+2. 用$Y$对$X^2$的线性无偏最小方差估计
+
+我们已习得，该估计表达式为：
+
+\[
+    \hat{X^2_Y} = E[X^2] + Cov(X^2,Y)\cdot Cov(Y,Y)^+ (Y-E[Y])
+\]
+
+由已知有：
+
+\[
+    E[X^2] = Var[X] + E[X]^2 = \sigma_X^2+ \mu_X^2
+\]
+
+与
+\[
+    Y-E[Y]=Y-\mu_Y
+\]
+
+特别地，当Y为随机变量的时候，我们不妨将其视作一维的随机向量，于是有：
+
+\[
+    Cov(Y,Y)^+ = 1/\sigma_Y^2
+\]
+
+
+\paragraph{题目2}
+考虑如下的线性随机系统
+	\[
+	\left\{\begin{array}{rl}
+		x(k+1)&=Ax(k)+Dw(k+1)\\
+		y(k)&=Cx(k)+Fw(k)
+		\end{array}\right.
+	\]
+	\[
+		x(k)\in R^n,y(k)\in R^n,w(k)\in R^n
+	\]
+
+	$w(k)$满足$w(k+1)=Mw(k)+\xi(k),M\in R^{m\times m}$,$\xi(k)$为零均值白噪声
+    用$y^k$求$x(k),x(k+1)$线性无偏最小方差估计，并求Kalman滤波方程
+    
+\end{document}
+
+
+
+
+
+题目二：
