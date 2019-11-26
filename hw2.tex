@@ -27,6 +27,7 @@
 设$Z=[X,Y]^T$满足正态分布$N(\mu_X,\mu_Y;\sigma_X^2,\sigma_Y^2;\rho)$
 
 1. 用$Y$对$X^2$的最小方差估计
+
 我们已习得，用$Y$对$X^2$的最小方差估计为：$E[X^2|Y]$
 
 我们设$Z$的密度函数为$f(x,y)$，则当$Y=y$时，$X$的条件密度函数为:
@@ -84,6 +85,17 @@ $$
     Cov(Y,Y)^+ = 1/\sigma_Y^2
 \]
 
+根据定义，我们计算得到：
+
+\[
+    Cov(X^2,Y)=E[(X^2-E[X^2])(Y-E[Y])]=2\rho\mu_X\sigma_X\sigma_Y
+\]
+
+综上有，所求估计式为:
+
+\[
+    \hat{X^2_Y} = \sigma_X^2 +\mu_X^2 +2\rho\mu_X\sigma_X/\sigma_Y(Y-\mu_Y)
+\]
 
 \paragraph{题目2}
 考虑如下的线性随机系统
