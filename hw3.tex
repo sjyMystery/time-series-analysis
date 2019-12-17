@@ -29,15 +29,75 @@
 		~\\	
 	\qquad 题目二：考虑线性动态系统
 		\begin{gather*}
-			y(t)=\theta^(\top)x(t)+e(t)\\
-			y(t)\in \mathbf{R},\theta\in \mathbf{R^d},x(t)\in \mathbf{R^d}\\
+			y(t)=\theta^{T}x(t)+e(t)\\
+			y(t)\in \mathbb{R},\theta\in \mathbb{R}^d,x(t)\in \mathbb{R^d}\\
 			e(t)\sim N(0,\lambda(t)) \quad \mbox{相互独立}
 		\end{gather*}
 		
 	\qquad 试给出$\theta$的极大似然估计
 	
-	\qquad 证明
-	
+    \qquad 证明
+    
+    我们假设在n个时间$t_1,t_2,...t_n$处进行观测，设这些时刻的输入为$x(t_1),x(t_2),...x(t_n)$，观测到的输出为$y(t_1),y(t_2),...y(t_n)$
+
+    则对应这些观测值的概率密度为：
+    \[
+        p\{e(t_i)=y(t_i)-x(t_i)\}=\dfrac{1}{\sqrt{2\pi}\lambda(t_i)}exp\{-\frac{1}{2\lambda{t_i}}[y(t_i)-\theta^Tx(t_i)]^2\}
+    \]
+
+    我们设$\theta = (\theta_1,\theta_2,...,\theta_d) \in \mathbb{R}^d$，则似然函数：
+
+    \[
+        L(t_1,t_2,...t_n;\theta) = \dfrac{1}{{(2\pi)}^{n/2}\prod_{i=1}^n\lambda(t_i)}exp\{-\frac{1}{2}\sum_{i=1}^n[y(t_i)-\sum_{k=1}^d{\theta_kx_k(t_i)}]^2\}
+    \]
+
+    取对数得：
+
+    \[
+        ln L = C - 1/2 \sum^n_{i=1}\dfrac{[y(t_i)-\sum_{k=1}^d{\theta_kx_k(t_i)}]^2}{\lambda(t_i)}
+    \]
+
+    其中C为与$\theta$无关的已知数。
+
+    又由：
+
+    \[
+        \dfrac{\partial lnL}{\partial \theta_l} =\dfrac{(y(t_i)-\sum_{k=1}^d\theta_kx_k(t_i))(x_l(t_i))}{\lambda(t_i)}=0
+    \]
+
+    可以得到：
+
+    \[
+        \sum_{i=1}^n \dfrac{y(t_i)}{\lambda(t_i)} x_l(t_i) = \sum_{k=1}^d[\sum_{i=1}^nx_k(t_i)x_l(t_i)]\theta_k
+    \]
+
+    其中 $l=1,2,...,d$
+
+    这是一个d元的线性方程组
+
+    我们设$Y=[\sum_{i=1}^n \dfrac{y(t_i)}{\lambda(t_i)} x_1(t_i),\sum_{i=1}^n \dfrac{y(t_i)}{\lambda(t_i)} x_2(t_i)),...,\sum_{i=1}^n \dfrac{y(t_i)}{\lambda(t_i)} x_d(t_i)]^T$
+
+    并且 $A= [\sum_{k=1}^nx_j(t_k)x_i(t_k)]_{i,j}$
+
+    则$A$是一个$d\times d$的矩阵
+
+    从而方程组可以表示为\[
+        Y = A\theta
+    \]
+
+    并且一定有解（因为$Y$为$d$维向量而 $rank A \leq n$ ，且 A是方阵），
+
+    这个解可以表达为:
+
+    \[
+        \hat{\theta}_{MLE}= A^+Y+(I-A^+A)T
+    \]
+
+    （其中$T$为任意的$d\times d$ 矩阵）
+
+    这即是$\theta$的一个最大似然估计。
+
+
 \end{flushleft}
 
 \end{document}
