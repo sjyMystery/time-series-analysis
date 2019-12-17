@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.9.4)  26 NOV 2019 16:54
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.9.4)  17 DEC 2019 14:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/nathaniel/math/ta/hw2
-(/Users/nathaniel/math/ta/hw2.tex
+**/Users/nathaniel/math/ta/hw3
+(/Users/nathaniel/math/ta/hw3.tex
 LaTeX2e <2018-04-01> patch level 2
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/ctex/ctexart.cls (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3.sty
@@ -1087,8 +1087,9 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup6
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (./hw2.aux)
-\openout1 = `hw2.aux'.
+))
+No file hw3.aux.
+\openout1 = `hw3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
@@ -1106,7 +1107,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
- ABD: EverySelectfont initializing macros
+ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 16.
 .................................................
 . fontspec info: "setup-math"
@@ -1178,14 +1179,14 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 17.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-] [2] (./hw2.aux) ) 
+] (./hw3.aux) ) 
 Here is how much of TeX's memory you used:
- 15788 strings out of 492970
- 364730 string characters out of 6133939
- 434133 words of memory out of 5000000
- 19652 multiletter control sequences out of 15000+600000
- 538724 words of font info for 72 fonts, out of 8000000 for 9000
+ 15780 strings out of 492970
+ 364078 string characters out of 6133939
+ 432133 words of memory out of 5000000
+ 19642 multiletter control sequences out of 15000+600000
+ 538740 words of font info for 74 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 53i,7n,74p,10451b,255s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,9n,74p,10451b,259s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on hw2.pdf (2 pages).
+Output written on hw3.pdf (1 page).
